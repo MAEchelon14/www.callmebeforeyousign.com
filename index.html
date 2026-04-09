@@ -163,6 +163,182 @@
   .cred-num { font-size: 52px; }
   .testimonials-section { padding: 60px 24px; }
  }
+
+ /* ── NAV MENU ── */
+ .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+ }
+ .nav-links li a {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+ }
+ .nav-links li a:hover { color: white; background: rgba(255,255,255,0.06); }
+ .nav-links li a.nav-cta {
+  background: var(--sky);
+  color: white;
+  padding: 8px 18px;
+  font-weight: 600;
+  margin-left: 6px;
+ }
+ .nav-links li a.nav-cta:hover { background: #3a7dc8; }
+
+ /* Hamburger */
+ .nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+ }
+ .nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 2px;
+  transition: background 0.2s;
+ }
+ .nav-hamburger:hover span { background: white; }
+
+ /* Mobile menu */
+ .mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 200;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+ }
+ .mobile-menu.open { display: flex; }
+ .mobile-close {
+  position: absolute;
+  top: 24px; right: 28px;
+  background: none; border: none;
+  font-size: 24px; color: rgba(255,255,255,0.6);
+  cursor: pointer;
+ }
+ .mobile-close:hover { color: white; }
+ .mobile-menu ul { list-style: none; text-align: center; padding: 0; margin: 0; }
+ .mobile-menu ul li { padding: 12px 0; }
+ .mobile-menu ul li a {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+ }
+ .mobile-menu ul li a:hover, .mobile-menu ul li a.nav-cta { color: var(--sky-l); }
+
+ @media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+ }
+
+
+ /* ── RESOURCES SECTION ── */
+ .resources-section {
+  padding: 80px 72px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+ }
+ .resources-inner { max-width: 1100px; margin: 0 auto; }
+ .section-kicker {
+  display: block;
+  font-size: 10px; font-weight: 700; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--sky); margin-bottom: 16px;
+ }
+ .section-heading {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 700; color: white; line-height: 1.1; margin-bottom: 16px;
+ }
+ .section-heading em { font-style: italic; color: var(--sky-l); }
+ .section-sub {
+  font-size: 17px; color: rgba(255,255,255,0.5);
+  font-weight: 300; max-width: 600px; line-height: 1.75; margin-bottom: 48px;
+ }
+ .resources-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+ }
+ .resource-card {
+  background: rgba(26,52,104,0.3);
+  border: 1px solid rgba(74,144,217,0.12);
+  padding: 36px 32px;
+  position: relative;
+  transition: border-color 0.2s;
+ }
+ .resource-card:hover { border-color: rgba(74,144,217,0.35); }
+ .resource-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--sky); margin-bottom: 16px;
+ }
+ .resource-card h3 {
+  font-family: 'Libre Baskerville', serif; font-size: 18px;
+  font-weight: 700; color: white; line-height: 1.35; margin-bottom: 12px;
+ }
+ .resource-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+ .resource-coming {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(74,144,217,0.5);
+ }
+
+ /* ── FAQ SECTION ── */
+ .faq-section {
+  padding: 80px 72px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(26,52,104,0.2) 0%, transparent 100%);
+ }
+ .faq-inner { max-width: 820px; margin: 0 auto; }
+ .faq-list { display: flex; flex-direction: column; gap: 2px; }
+ .faq-item { border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02); }
+ .faq-item.open { border-color: rgba(74,144,217,0.25); background: rgba(26,52,104,0.3); }
+ .faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 28px; text-align: left;
+  font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600;
+  color: white; letter-spacing: 0.2px; gap: 16px;
+  transition: color 0.2s;
+ }
+ .faq-q:hover { color: var(--sky-l); }
+ .faq-icon {
+  font-size: 22px; font-weight: 300; color: var(--sky);
+  flex-shrink: 0; line-height: 1; transition: transform 0.25s;
+ }
+ .faq-item.open .faq-icon { transform: rotate(45deg); }
+ .faq-a {
+  display: none;
+  padding: 0 28px 24px;
+ }
+ .faq-item.open .faq-a { display: block; }
+ .faq-a p {
+  font-size: 15px; color: rgba(255,255,255,0.6);
+  line-height: 1.85; font-weight: 300;
+ }
+
+ @media (max-width: 768px) {
+  .resources-section, .faq-section { padding-left: 24px; padding-right: 24px; }
+  .resources-grid { grid-template-columns: 1fr; }
+ }
+
 </style>
 </head>
 <body>
@@ -188,10 +364,37 @@
    <span class="lt-3">Advisors</span>
   </div>
  </div>
- <span class="nav-url">callmebeforeyousign.com</span>
+
+ <!-- Desktop nav links -->
+ <ul class="nav-links">
+  <li><a href="#about">About</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#testimonials">Testimonials</a></li>
+  <li><a href="#resources">Resources</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#contact" class="nav-cta">Contact Eddie</a></li>
+ </ul>
+
+ <!-- Mobile hamburger -->
+ <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+  <span></span><span></span><span></span>
+ </button>
 </nav>
 
-<section class="hero">
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="mobile-menu">
+ <button class="mobile-close" aria-label="Close menu" onclick="document.getElementById('mobile-menu').classList.remove('open')">&#x2715;</button>
+ <ul>
+  <li><a href="#about" onclick="document.getElementById('mobile-menu').classList.remove('open')">About</a></li>
+  <li><a href="#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a></li>
+  <li><a href="#testimonials" onclick="document.getElementById('mobile-menu').classList.remove('open')">Testimonials</a></li>
+  <li><a href="#resources" onclick="document.getElementById('mobile-menu').classList.remove('open')">Resources</a></li>
+  <li><a href="#faq" onclick="document.getElementById('mobile-menu').classList.remove('open')">FAQ</a></li>
+  <li><a href="#contact" class="nav-cta" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contact Eddie</a></li>
+ </ul>
+</div>
+
+<section id="about" class="hero">
  <div class="editorial">
   <div class="hero-kicker">Independent Franchise Advisor &nbsp;·&nbsp; Serving Franchisees Nationwide</div>
   <h1 class="headline-top">
@@ -234,7 +437,7 @@
  <span class="divider-label">Two Situations. One Advisor Who Has Seen Everything.</span>
 </div>
 
-<div class="services-section">
+<div id="services" class="services-section">
  <div class="services-header">
   <h2>Where Eddie can <em>help you most.</em></h2>
  </div>
@@ -273,7 +476,7 @@
 </div>
 
 <!-- ── TESTIMONIALS ── -->
-<section class="testimonials-section">
+<section id="testimonials" class="testimonials-section">
  <div class="testimonials-header">
   <span class="testimonials-kicker">Industry Leaders Speak</span>
   <h2>What the <em>leaders</em><br>of this industry<br>say about Eddie.</h2>
@@ -304,18 +507,113 @@
  </div>
 </section>
 
-<section class="cta-section">
+
+<!-- ── RESOURCES / BLOG ── -->
+<section id="resources" class="resources-section">
+ <div class="resources-inner">
+  <div class="section-label-wrap">
+   <span class="section-kicker">Resources &amp; Insights</span>
+   <h2 class="section-heading">Know before you <em>sign.</em></h2>
+   <p class="section-sub">Practical guides, timelines and insider knowledge for franchisees — whether you&rsquo;re evaluating your first opportunity or approaching a renewal. Full articles coming soon.</p>
+  </div>
+  <div class="resources-grid">
+   <div class="resource-card">
+    <div class="resource-tag">Guide</div>
+    <h3>The FDD: What Every Section Actually Means</h3>
+    <p>A plain-English walkthrough of the 23 items in a Franchise Disclosure Document — and which ones most franchisees skip at their own risk.</p>
+    <span class="resource-coming">Coming Soon</span>
+   </div>
+   <div class="resource-card">
+    <div class="resource-tag">Strategy</div>
+    <h3>The 6-Month Renewal Window: Your Moment of Leverage</h3>
+    <p>Why the window just before your final six months is the single most important moment in your franchise relationship — and how to use it.</p>
+    <span class="resource-coming">Coming Soon</span>
+   </div>
+   <div class="resource-card">
+    <div class="resource-tag">Checklist</div>
+    <h3>10 Questions to Ask Before Signing Any Franchise Agreement</h3>
+    <p>The questions franchisors hope you won&rsquo;t ask — and the answers that should change your decision.</p>
+    <span class="resource-coming">Coming Soon</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="faq-section">
+ <div class="faq-inner">
+  <div class="section-label-wrap" style="text-align:center; margin-bottom: 56px;">
+   <span class="section-kicker">FAQ</span>
+   <h2 class="section-heading">Questions people ask <em>before they call.</em></h2>
+  </div>
+  <div class="faq-list">
+
+   <div class="faq-item">
+    <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+     What exactly does Trusted Franchise Advisors do?
+     <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">
+     <p>We provide independent, expert guidance to franchisees &mdash; both people evaluating a new franchise and existing franchisees approaching renewal. Unlike franchise brokers who are paid by franchisors, Eddie works exclusively for you. There is no conflict of interest and no commission. You get honest, experienced advice from someone who has spent 20 years on the other side of the table.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+     How much does a consultation cost?
+     <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">
+     <p>The initial consultation is always free &mdash; no exceptions, no time limit. Whether you talk for 15 minutes or an hour, there is no charge. If you decide to engage Eddie for ongoing advisory work, that is discussed transparently at that point. But the first call costs you nothing except your time.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+     I&rsquo;m not in real estate. Can Eddie still help me?
+     <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">
+     <p>Absolutely. While Eddie&rsquo;s background is in real estate franchising, the structure of franchise agreements, FDD documents, and renewal leverage applies across every sector &mdash; food &amp; beverage, fitness, home services, retail, and more. The principles of what to negotiate and when are universal.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+     My renewal is coming up. Is it too late to get advice?
+     <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">
+     <p>It is almost never too late, but timing matters. The ideal window is the period just before your final six months, when you still have the legal right to consult with outside parties. If you are already inside that window, call immediately &mdash; there may still be significant leverage available depending on where you are in the process.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+     Is this the same as hiring a franchise attorney?
+     <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">
+     <p>No, and the difference matters. An attorney reviews documents for legal risk. Eddie brings 20 years of franchise operations and sales experience &mdash; he understands what is actually negotiable in practice, what franchisors will and won&rsquo;t move on, and what the real-world implications of specific clauses look like after signing. The two are complementary, not interchangeable.</p>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="cta-section">
  <div class="coming-soon-badge">Full Website Coming Soon</div>
  <h2>One call changes <em>everything.</em></h2>
  <p>No obligation. No sales pitch. No junior consultants. Just an honest conversation with someone who has been on both sides of this table for over 20 years.</p>
  <div class="contact-row">
   <span><a href="tel:8436147779">843-614-7779</a></span>
-  <span><a href="mailto:eddie@callmebeforeyousign.com">eddie@callmebeforeyousign.com</a></span>
+  <span><a href="/cdn-cgi/l/email-protection#f19495959894b192909d9d9c949394979e8394889e848298969fdf929e9c"><span class="__cf_email__" data-cfemail="bbdedfdfd2defbd8dad7d7d6ded9deddd4c9dec2d4cec8d2dcd595d8d4d6">[email&#160;protected]</span></a></span>
   <span>callmebeforeyousign.com</span>
  </div>
  <div class="cta-buttons">
   <a href="tel:8436147779" class="btn-primary">Call Eddie Directly</a>
-  <a href="mailto:eddie@callmebeforeyousign.com" class="btn-ghost">Send an Email</a>
+  <a href="/cdn-cgi/l/email-protection#533637373a361330323f3f3e363136353c21362a3c26203a343d7d303c3e" class="btn-ghost">Send an Email</a>
  </div>
 </section>
 
@@ -340,11 +638,4 @@
    </div>
   </div>
   <div>
-   <p>&copy; 2025 Trusted Franchise Advisors. All rights reserved. U.S.-based practice.</p>
-  </div>
-  <p><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Disclaimer</a></p>
- </div>
-</footer>
-
-</body>
-</html>
+   <p>&co
